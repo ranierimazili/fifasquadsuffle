@@ -351,6 +351,10 @@ function escolherJogadores() {
 }
 
 function gerarTimes() {
+	document.getElementById('estrutura').style.display = "none";
+	var nova_estrutura = document.getElementById("ta_estrutura").value;
+	estrutura = nova_estrutura ? JSON.parse(nova_estrutura) : estrutura;
+
 	document.getElementById('resultados').innerHTML = "";
 	results = [];
 	escolherTimes();
@@ -361,8 +365,6 @@ function gerarTimes() {
 
 //Imprimir resultados
 function imprimirResultados() {
-	//console.log("chegou");
-	//results.forEach(imprimirJogador);
 	for (var key in results) {
 		document.getElementById('resultados').innerHTML += "<b>" + results[key].nome + " - " + results[key].time + "<br></b>";
 		for (var i=0;i<results[key].jogadores.length;i++) {
@@ -372,4 +374,7 @@ function imprimirResultados() {
 	}
 }
 
-
+function mostrarEstrutura() {
+	document.getElementById('estrutura').style.display = "";
+	document.getElementById('ta_estrutura').value = JSON.stringify(estrutura, undefined, 4);
+}
