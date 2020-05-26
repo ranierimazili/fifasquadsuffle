@@ -508,7 +508,7 @@ function gerarTimes() {
 	escolherTimes();
 	escolherJogadores();
 	imprimirResultados();
-	//definirOrdemTrocas();
+	definirOrdemTrocas();
 }
 
 //Imprimir resultados
@@ -527,13 +527,13 @@ function mostrarEstrutura() {
 	document.getElementById('ta_estrutura').value = JSON.stringify(estrutura, undefined, 4);
 }
 
-/*function definirOrdemTrocas() {
-	console.log("trocas");
+function definirOrdemTrocas() {
+	
 	document.getElementById('resultados').innerHTML += "<br><br><b>Ordem das trocas</b><br><br>"
 	var competidores = shuffle(estrutura.participantes);
 	document.getElementById('resultados').innerHTML += "1) " + competidores.join(",") + "<br>";
-	competidores = shuffle(estrutura.participantes);
+	/*competidores = shuffle(estrutura.participantes);
 	document.getElementById('resultados').innerHTML += "2) " + competidores.join(",") + "<br>";
 	competidores = shuffle(estrutura.participantes);
-	document.getElementById('resultados').innerHTML += "3) " + competidores.join(",") + "<br>";
-}*/
+	document.getElementById('resultados').innerHTML += "3) " + competidores.join(",") + "<br>";*/
+}
